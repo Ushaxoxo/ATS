@@ -32,6 +32,7 @@ def analyze_resume_percentage(text, job_description):
     1. Provide a percentage match between the resume and job description.
     2. Follow with a clear justification of why you gave that percentage.
     3. Then give suggestions on how to improve the resume to get a better match.
+    4. Keep it short and straigh to the point.
     """
     response = model.generate_content(prompt)
     return response.text
@@ -47,7 +48,7 @@ def analyze_resume_missing_skills(text, job_description):
     {text}
 
     Provide the following:
-    Highlight all the skills that are listed in the job description but are missing from the resume.
+    Highlight all the skills that are listed in the job description but are missing from the resume. Do not follow up with a justification or explanation.
     """
     response = model.generate_content(prompt)
     return response.text
@@ -63,7 +64,7 @@ def generate_cover_letter(text, job_description):
     {text}
 
     Provide the following:
-    Draft a cover letter that considers both the resume and the job description.
+    Draft a cover letter that considers both the resume and the job description.The tone of the letter drafted must be convincing and ambitious.
     """
     response = model.generate_content(prompt)
     return response.text
